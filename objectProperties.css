@@ -1,0 +1,65 @@
+body{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 500px;
+}
+
+div.main{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+table.controls{
+    border: 0;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table.controls tbody{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+table.controls tbody tr{
+    height: 25px;
+    border: 0;
+}
+
+table.controls tbody tr td{
+    height: 25px;
+    border: 0;
+    padding: 0;
+}
+
+table.controls tbody tr td:first-child{
+    width: 180px;
+}
+
+table.controls tbody tr td:last-child{
+    width: 150px;
+}
+
+table.controls tbody tr td:nth-child(1) button{
+    width: 100%;
+}
+
+table.controls tbody tr td:nth-child(2) input{
+    width: 100%;
+}
+
+table.controls tbody tr td:nth-child(3){
+    text-align: center;
+}
+
+iframe#bimplusObjectProperties{
+    height: calc(100% - 100px);
+    width: 100%;
+    background-color: white;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}

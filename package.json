@@ -1,0 +1,22 @@
+{
+  "name": "bimplus-embedded-example",
+  "version": "0.0.1",
+  "author": "",
+  "description": "Bimplus embedded web controls Example Application",
+  "private": true,
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "license": "MIT",
+  "scripts": {
+    "serve": "live-server --verbose"
+  },
+  "devDependencies": {
+    "bimplus-webclient": "0.0.1",
+    "bimplus-websdk": "0.0.67",
+    "jquery": "2.2.4",
+    "requirejs": "2.0.0"
+  },
+  "dependencies": {}
+}

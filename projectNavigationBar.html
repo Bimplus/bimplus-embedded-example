@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BimplusEmbedded</title>
+        <link rel="stylesheet" type="text/css" href="projectNavigationBar.css">
+        <link rel="stylesheet" type="text/css" href="tab.css">
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="tab.js"></script>
+        <script src="require-config.js"></script>
+        <script src="node_modules/requirejs/require.js" data-main="projectNavigationBar.js"></script>
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablink active" onclick="openTab(event, 'navigationBar')">Navigation bar</button>
+            <button class="tablink" onclick="openTab(event, 'projectDetails')">Project details</button>
+            <button class="tablink" onclick="openTab(event, 'structures')">Structures</button>
+            <button class="tablink" onclick="openTab(event, 'tasks')">Tasks</button>
+            <button class="tablink" onclick="openTab(event, 'objectNavigator')">Object navigator</button>
+        </div>
+        <div class="main">
+            <div id="navigationBar" class="tabcontent">
+                <table class="controls">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button id="checkAlive">Check Message</button>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="moduleSelected">Select structure</button>
+                            </td>
+                            <td>
+                                <select id="moduleSelectedCombo">
+                                    <option value=""></option>
+                                    <option value="projectDetails">Project details (projectDetails)</option>
+                                    <option value="objectNavigator">Object navigator (objectNavigator)</option>
+                                    <option value="taskBoard">Task board (taskBoard)</option>
+                                    <option value="clashDetection">Clash detection (clashDetection)</option>
+                                    <option value="projectSlideshows">Project slideshows (projectSlideshows)</option>
+                                    <option value="structureManager">Structure manager (structureManager)</option>
+                                    <option value="essApplication">ESS aplication (essApplication)</option>
+                                </select>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="projectDetails" class="tabcontent">
+                <table class="controls">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button id="modelToggled">Model toggled</button>
+                            </td>
+                            <td>
+                                <input id="modelToggledId" placeholder="Insert model uuid">
+                            </td>
+                            <td>
+                                <select id="modelToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="modelLayerToggled">Model layer toggled</button>
+                            </td>
+                            <td>
+                                <input class="input_1_2" id="modelToggledId1" placeholder="Insert model uuid">
+                                <input class="input_2_2" id="modelLayerToggledId" placeholder="Insert model layer uuid">
+                            </td>
+                            <td>
+                                <select id="modelLayerToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="topologyNodeToggled">Topology node toggled</button>
+                            </td>
+                            <td>
+                                <input id="topologyNodeToggledId" placeholder="Insert topology node uuid">
+                            </td>
+                            <td>
+                                <select id="topologyNodeToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <button id="modelTransparencyToggled">Model toggled</button>
+                            </td>
+                            <td>
+                                <input id="modelTransparencyToggledId" placeholder="Insert model uuid">
+                            </td>
+                            <td>
+                                <select id="modelTransparencyToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <button id="modelLayerTransparencyToggled">Model layer toggled</button>
+                            </td>
+                            <td>
+                                <input class="input_1_2" id="modelTransparencyToggledId1" placeholder="Insert model uuid">
+                                <input class="input_2_2" id="modelLayerTransparencyToggledId" placeholder="Insert model layer uuid">
+                            </td>
+                            <td>
+                                <select id="modelLayerTransparencyToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="structures" class="tabcontent">
+                <table class="controls">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button id="structureSelected">Structure selected</button>
+                            </td>
+                            <td>
+                                <input id="structureSelectedId" placeholder="Insert structure uuid">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="structureNodeSelected">Structure node selected</button>
+                            </td>
+                            <td>
+                                <input id="structureNodeSelectedId" placeholder="Insert structure node uuid">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="structureNodeToggled">Structure node Toggled</button>
+                            </td>
+                            <td>
+                                <input id="structureNodeToggledId" placeholder="Insert structure node uuid">
+                            </td>
+                            <td>
+                                 <select id="structureNodeToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tasks" class="tabcontent">
+                <table class="controls">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button id="filterSelected">Filter selected</button>
+                            </td>
+                            <td>
+                                <select class="select_2_2" id="disciplineId">
+                                    <option value="" disabled selected hidden>Select discipline ...</option>
+                                    <option value="5f18a295-ab3c-4c0f-a4d3-59206f9ff98f">Tasks (5f18a295-ab3c-4c0f-a4d3-59206f9ff98f)</option>
+                                </select>
+                                <input class="input_1_2" id="filterSelectedId" placeholder="Insert filter uuid">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <button id="filterNodeSelected">Filter node selected</button>
+                            </td>
+                            <td>
+                                 <select class="select_2_2" id="disciplineNodeId">
+                                    <option value="" disabled selected hidden>Select discipline ...</option>
+                                    <option value="5f18a295-ab3c-4c0f-a4d3-59206f9ff98f">Tasks (5f18a295-ab3c-4c0f-a4d3-59206f9ff98f)</option>
+                                </select>
+                                <input class="input_1_2" id="filterNodeSelectedId" placeholder="Insert filter node uuid">
+                            </td>
+                            <td>
+                                  <select id="filterNodeSelectedSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="filterNodeToggled">Filter node toggled</button>
+                            </td>
+                            <td>
+                                 <select class="select_2_2" id="disciplineToggleNodeId">
+                                    <option value="" disabled selected hidden>Select discipline ...</option>
+                                    <option value="5f18a295-ab3c-4c0f-a4d3-59206f9ff98f">Tasks (5f18a295-ab3c-4c0f-a4d3-59206f9ff98f)</option>
+                                </select>
+                                <input class="input_1_2" id="filterNodeToggledId" placeholder="Insert filter node uuid">
+                            </td>
+                            <td>
+                                  <select id="filterNodeToggledSelect">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="objectNavigator" class="tabcontent">
+                <table class="controls">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button id="filterSelectedON">Filter selected</button>
+                            </td>
+                            <td>
+                                <select class="select_2_2" id="disciplineIdON">
+                                    <option value="" selected>Select discipline ...</option>
+                                    <option value="00000000-0000-0000-0000-000000000000">All (00000000-0000-0000-0000-000000000000)</option>
+                                    <option value="0f106af0-a919-44c5-b211-15bd5ef620b6">Building (0f106af0-a919-44c5-b211-15bd5ef620b6)</option>
+                                    <option value="11555f6f-10ec-4180-88b3-699738c079c3">Door/Window (11555f6f-10ec-4180-88b3-699738c079c3)</option>
+                                    <option value="33826b01-c267-4b25-9f8e-79ac2953c443">MEP (33826b01-c267-4b25-9f8e-79ac2953c443)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5831">General objects (30114b52-bc05-47c1-80b5-c7d5485d5831)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5840">Finish (30114b52-bc05-47c1-80b5-c7d5485d5840)</option>
+                                    <option value="dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f">Reinforcement (dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f)</option>
+                                    <option value="09e623d4-1e12-4a77-b358-ea1d0b28e4a7">Room (09e623d4-1e12-4a77-b358-ea1d0b28e4a7)</option>
+                                </select>
+                                <input class="input_1_2" id="filterSelectedIdON" placeholder="Insert filter uuid">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="filterNodeSelectedON">Filter node selected</button>
+                            </td>
+                            <td>
+                                <select class="select_2_2" id="disciplineNodeIdON">
+                                    <option value="" selected>Select discipline ...</option>
+                                    <option value="00000000-0000-0000-0000-000000000000">All (00000000-0000-0000-0000-000000000000)</option>
+                                    <option value="0f106af0-a919-44c5-b211-15bd5ef620b6">Building (0f106af0-a919-44c5-b211-15bd5ef620b6)</option>
+                                    <option value="11555f6f-10ec-4180-88b3-699738c079c3">Door/Window (11555f6f-10ec-4180-88b3-699738c079c3)</option>
+                                    <option value="33826b01-c267-4b25-9f8e-79ac2953c443">MEP (33826b01-c267-4b25-9f8e-79ac2953c443)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5831">General objects (30114b52-bc05-47c1-80b5-c7d5485d5831)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5840">Finish (30114b52-bc05-47c1-80b5-c7d5485d5840)</option>
+                                    <option value="dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f">Reinforcement (dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f)</option>
+                                    <option value="09e623d4-1e12-4a77-b358-ea1d0b28e4a7">Room (09e623d4-1e12-4a77-b358-ea1d0b28e4a7)</option>
+                                </select>
+                                <input class="input_1_2" id="filterNodeSelectedIdON" placeholder="Insert node uuid">
+                            </td>
+                            <td>
+                                   <select id="filterNodeSelectedSelectON">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="filterNodeToggledON">Filter node toggled</button>
+                            </td>
+                            <td>
+                                <select class="select_2_2" id="disciplineToggleNodeIdON">
+                                    <option value="" selected>Select discipline ...</option>
+                                    <option value="00000000-0000-0000-0000-000000000000">All (00000000-0000-0000-0000-000000000000)</option>
+                                    <option value="0f106af0-a919-44c5-b211-15bd5ef620b6">Building (0f106af0-a919-44c5-b211-15bd5ef620b6)</option>
+                                    <option value="11555f6f-10ec-4180-88b3-699738c079c3">Door/Window (11555f6f-10ec-4180-88b3-699738c079c3)</option>
+                                    <option value="33826b01-c267-4b25-9f8e-79ac2953c443">MEP (33826b01-c267-4b25-9f8e-79ac2953c443)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5831">General objects (30114b52-bc05-47c1-80b5-c7d5485d5831)</option>
+                                    <option value="30114b52-bc05-47c1-80b5-c7d5485d5840">Finish (30114b52-bc05-47c1-80b5-c7d5485d5840)</option>
+                                    <option value="dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f">Reinforcement (dd5cc7d0-72fe-46aa-ba62-dcd86729bd2f)</option>
+                                    <option value="09e623d4-1e12-4a77-b358-ea1d0b28e4a7">Room (09e623d4-1e12-4a77-b358-ea1d0b28e4a7)</option>
+                                </select>
+                                <input class="input_1_2" id="filterNodeToggledIdON" placeholder="Insert node uuid">
+                            </td>
+                            <td>
+                                   <select id="filterNodeToggledSelectON">
+                                    <option value=""></option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <iframe id="bimplusProjectNavigationBar" align="left"></iframe>
+        </div>
+    </body>
+</html>
