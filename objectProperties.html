@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>BimplusEmbedded</title>
-        <link rel="stylesheet" type="text/css" href="objectProperties.css">
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="require-config.js"></script>
-        <script src="node_modules/requirejs/require.js" data-main="objectProperties.js"></script>
-    </head>
-    <body>
-        <div class="main">
-            <table class='controls'>
-                <tbody>
-                    <tr>
-                        <td>
-                            <button id="checkAlive">Check Message</button>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button id="objectStructureSelected">Select structure</button>
-                        </td>
-                        <td>
-                            <input id="objectStructureSelectedId">
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button id="objectSelected">Select objects</button>
-                        </td>
-                        <td>
-                            <input id="objectSelectedIds" title='Enter list of uuid-s of objects separated by semicolon'>
-                        </td>
-                        <td>
-                            <input id="multiselect" type="checkbox">multiselect
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button id="currentObjectSelected">Current object selected</button>
-                        </td>
-                        <td>
-                            <input id="currentObjectSelectedId">
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
-            <iframe id="bimplusObjectProperties" align="left"></iframe>
-        </div>
-    </body>
+
+<head>
+  <title>BimplusEmbedded</title>
+  <link rel="stylesheet" type="text/css" href="objectProperties.css">
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="require-config.js"></script>
+  <script src="node_modules/requirejs/require.js" data-main="objectProperties.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <table class='controls'>
+      <tbody>
+        <tr>
+          <td>
+            <button id="checkAlive">Check Message</button>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="objectStructureSelected">Select structure</button>
+          </td>
+          <td>
+            <input id="objectStructureSelectedId">
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="objectSelected">Select objects</button>
+          </td>
+          <td>
+            <input id="objectSelectedIds" title='Enter list of uuid-s of objects separated by semicolon'>
+          </td>
+          <td>
+            <input id="multiselect" type="checkbox">multiselect
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="currentObjectSelected">Current object selected</button>
+          </td>
+          <td>
+            <input id="currentObjectSelectedId">
+          </td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+      </tbody>
+    </table>
+    <iframe id="bimplusObjectProperties" align="left"></iframe>
+  </div>
+</body>
+
 </html>

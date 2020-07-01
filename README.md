@@ -12,7 +12,7 @@ How to build
 [http://www.nodejs.org/](http://www.nodejs.org/)
 
 ### Install global npm modules
-Install live-server package for auto reload and convient development
+Install live-server package for auto reload and convenient development
 
     npm install -g live-server
 
@@ -23,7 +23,7 @@ Open up a normal command line (admin is not needed) and go to the application fo
 
 ### Develop/Debug example
 goto application folder
-	
+
     npm run serve
 
 Open browser and open address http://127.0.0.1:8080

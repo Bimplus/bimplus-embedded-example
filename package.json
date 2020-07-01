@@ -13,10 +13,10 @@
     "serve": "live-server --verbose"
   },
   "devDependencies": {
-    "bimplus-webclient": "0.0.1",
-    "bimplus-websdk": "0.0.67",
-    "jquery": "2.2.4",
-    "requirejs": "2.0.0"
+    "bimplus-webclient": "0.0.9",
+    "bimplus-websdk": "0.0.124",
+    "jquery": "3.5.1",
+    "requirejs": "2.3.6"
   },
   "dependencies": {}
 }

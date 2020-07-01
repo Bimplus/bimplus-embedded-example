@@ -1,27 +1,27 @@
 .tab {
-    overflow: hidden;
-    background-color: #f1f1f1;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
 
 .tab button {
-    background-color: lightgreen;
-    float: left;
-    outline: none;
-    cursor: pointer;
-    height: 25px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: green;
+  background-color: lightgreen;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  height: 25px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
 }
 
 .tab button.active {
-    background-color: darkgreen;
+  background-color: darkgreen;
 }
 
 body div.tabcontent:nth-child(1) {
-    display: block;
+  display: block;
 }
 
 .tabcontent {
-    display: none;
+  display: none;
 }

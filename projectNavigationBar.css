@@ -1,99 +1,99 @@
-body{
-    border: 0;
-    margin: 0;
-    padding: 0;
-    min-width: 350px;
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 350px;
 }
 
-div.main select{
-    height: 25px;
-    width: 100%;
+div.main select {
+  height: 25px;
+  width: 100%;
 }
 
-div.main button{
-    height: 25px;
-    width: 100%;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: lightblue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: blue;
+div.main button {
+  height: 25px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
 }
 
-div.main input{
-    width: calc(100% - 4px);
-    height: calc(25px - 6px);
+div.main input {
+  width: calc(100% - 4px);
+  height: calc(25px - 6px);
 }
 
-div.main input.input_1_2{
-    width: calc(50% - 4px);
-    height: calc(25px - 6px);
-    float:left;
+div.main input.input_1_2 {
+  width: calc(50% - 4px);
+  height: calc(25px - 6px);
+  float: left;
 }
 
-div.main input.input_2_2{
-    width: calc(50% - 4px);
-    height: calc(25px - 6px);
-    float:left;
+div.main input.input_2_2 {
+  width: calc(50% - 4px);
+  height: calc(25px - 6px);
+  float: left;
 }
 
-div.main select.select_1_2{
-    width: calc(50% - 4px);
-    height: calc(25px);
-    float:left;
+div.main select.select_1_2 {
+  width: calc(50% - 4px);
+  height: calc(25px);
+  float: left;
 }
 
-div.main select.select_2_2{
-    width: calc(50% - 4px);
-    height: calc(25px);
-    float:left;
+div.main select.select_2_2 {
+  width: calc(50% - 4px);
+  height: calc(25px);
+  float: left;
 }
 
-div.main{
-    border: 0;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+div.main {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-table.controls{
-    border: 0;
-    border-spacing: 0;
-    width: 100%;
+table.controls {
+  border: 0;
+  border-spacing: 0;
+  width: 100%;
 }
 
-table.controls tbody{
-    border: 0;
-    margin: 0;
-    padding: 0;
+table.controls tbody {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
-table.controls tbody tr{
-    height: 25px;
-    border: 0;
+table.controls tbody tr {
+  height: 25px;
+  border: 0;
 }
 
-table.controls tbody tr td{
-    height: 25px;
-    border: 0;
-    padding: 0;
+table.controls tbody tr td {
+  height: 25px;
+  border: 0;
+  padding: 0;
 }
 
-table.controls tbody tr td:first-child{
-    width: 160px;
+table.controls tbody tr td:first-child {
+  width: 160px;
 }
 
-table.controls tbody tr td:last-child{
-    width: 30px;
+table.controls tbody tr td:last-child {
+  width: 30px;
 }
 
-div.main iframe#bimplusProjectNavigationBar{
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    border: 0;
-    margin: 0;
-    padding: 0;
+div.main iframe#bimplusProjectNavigationBar {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
