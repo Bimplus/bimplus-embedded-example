@@ -25,7 +25,7 @@ define(function (require) {
   var externalClient = new WebClient.ExternalClient("MyClient");
 
   // Make authorization request to Bimplus, providing user name, password and application id
-  api.authorize.post('demoEmail@allplan.com', 'password', 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX').done(function (data, status, xhr) {
+  api.authorize.post('demoEmail@allplan.com', 'password', '5F43560D-9B0C-4F3C-85CB-B5721D098F7B').done(function (data, status, xhr) {
     api.setAccessToken(data.access_token);
     currentToken = data.access_token;
 
@@ -72,6 +72,25 @@ define(function (require) {
       explorer.sendMessage('CenterObject', {
         id: currentObject,
         flyTo: true
+      });
+    } else {
+      alert("Please select object in BimExplorer!");
+    }
+  });
+
+  $("#colorizeObject").click(function () {
+    // Send center object message to explorer iframe
+    if (currentObject) {
+
+      // Unselect current object
+      explorer.sendMessage('ObjectsSelected', {
+        ids: []
+      });
+      
+      // Set object color to dark green
+      explorer.sendMessage('ColorizeObjects', {
+        ids: [currentObject],
+        color : "rgb(0,128,0)"
       });
     } else {
       alert("Please select object in BimExplorer!");
