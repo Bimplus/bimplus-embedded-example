@@ -33,27 +33,42 @@ define(function (require) {
     portal = new WebClient.BimPortal('bimplusPortal', api.getAccessToken(), externalClient, environment);
     explorer = new WebClient.BimExplorer('bimplusExplorer', api.getAccessToken(), externalClient, environment);
 
+    explorer.onObjectSelected = (id/*, multiSelect, selected*/)=>{
+      currentObject = id;
+    }
+
+    explorer.onObjectsSelected = (ids/*, multiSelect, selected*/)=>{
+      alert("Objects Selected ("+ids.length+")");
+    }
+
+    explorer.onIssueSelected = (id)=>{
+      alert("Selected Issue: "+id);
+    }
+
+    explorer.onPinSelected = (id)=>{
+      alert("Selected Pin: "+id);
+    }
+
+    explorer.onDataLoaded = ()=>{
+      alert("Finished loading");
+    }
+
+    explorer.onClickedHyperlink = (url)=>{
+      alert("Clicked Hyperlink: "+url);
+    }
+
     // Initialize the client to listen for messages
     externalClient.initialize();
 
-    // Add message handler for team changed event
-    externalClient.addMessageHandler("TeamChanged", function (msg) {
-      currentTeam = msg.id;
-    });
+    portal.onTeamChanged = (teamId)=>{
+      currentTeam = teamId;
+    };
 
-    // Add message handler for project selected event
-    externalClient.addMessageHandler("ProjectSelected", function (msg) {
-      currentProject = msg.id;
-
+    portal.onProjectSelected = (prjId)=>{
+      currentProject = prjId;
       explorer.load(currentTeam, currentProject);
-    });
+    }
 
-    // Add message handler for object selected event
-    externalClient.addMessageHandler("ObjectSelected", function (msg) {
-      currentObject = msg.Id;
-    });
-
-    //
     portal.load();
 
   }).fail(function (data) {
@@ -63,16 +78,13 @@ define(function (require) {
 
   $("#resetView").click(function () {
     // Send reset view message to explorer iframe
-    explorer.sendMessage('ResetView');
+    explorer.resetView();
   });
 
   $("#centerObject").click(function () {
     // Send center object message to explorer iframe
     if (currentObject) {
-      explorer.sendMessage('CenterObject', {
-        id: currentObject,
-        flyTo: true
-      });
+      explorer.centerObject(currentObject,true);
     } else {
       alert("Please select object in BimExplorer!");
     }
@@ -83,15 +95,10 @@ define(function (require) {
     if (currentObject) {
 
       // Unselect current object
-      explorer.sendMessage('ObjectsSelected', {
-        ids: []
-      });
+      explorer.selectObjects([]);
       
       // Set object color to dark green
-      explorer.sendMessage('ColorizeObjects', {
-        ids: [currentObject],
-        color : "rgb(0,128,0)"
-      });
+      explorer.colorizeObjects( [currentObject],"rgb(0,128,0)");
     } else {
       alert("Please select object in BimExplorer!");
     }
