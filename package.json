@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "bimplus-webclient": "0.1.1",
-    "bimplus-websdk": "0.0.124",
+    "bimplus-websdk": "0.0.226",
     "jquery": "3.5.1",
     "requirejs": "2.3.6"
   },
