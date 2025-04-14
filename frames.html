@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BimplusEmbedded</title>
+    <script
+      type="text/javascript"
+      src="node_modules/jquery/dist/jquery.js"
+    ></script>
+    <script src="require-config.js"></script>
+    <script
+      src="node_modules/requirejs/require.js"
+      data-main="frames.js"
+    ></script>
+  </head>
+
+  <body>
+    <iframe
+      title="bimplusPortal"
+      id="bimplusPortal"
+      style="
+        text-align: left;
+        border: 0;
+        height: 800px;
+        width: 49%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      "
+    >
+    </iframe>
+    <iframe
+      title="bimplusExplorer"
+      id="bimplusExplorer"
+      style="
+        text-align: right;
+        border: 0;
+        height: 800px;
+        width: 49%;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      "
+    >
+    </iframe>
+
+    <div style="text-align: center">
+      <button id="resetView">Reset View</button>
+      <button id="centerObject">Center Object</button>
+      <button id="colorizeObject">Colorize Object</button>
+      <button id="objectProperties">View Object Properties</button>
+      <input type="text" id="objectIdInput" />
+      <button type="button" id="selectObject">Select Object</button>
+    </div>
+  </body>
+</html>

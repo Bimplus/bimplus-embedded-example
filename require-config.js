@@ -1,4 +1,4 @@
-var require = {
+require = {
   paths: {
     // the left side is the module ID,
     // the right side is the path to

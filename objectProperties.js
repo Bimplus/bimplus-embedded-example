@@ -1,32 +1,31 @@
 define(function (require) {
-
   // Load websdk
-  var WebSdk = require('bimplus/websdk');
+  let WebSdk = require("bimplus/websdk");
 
   // Load Client integration
-  var WebClient = require('bimplus/webclient');
+  let WebClient = require("bimplus/webclient");
 
-  // Use environment dev,stage or prod
-  var environment = "stage";
+  // Get values from URL
+  let environment = WebClient.getUrlParameter("env");
+  let token = WebClient.getUrlParameter("token");
+  let currentTeam = WebClient.getUrlParameter("team");
+  let currentProject = WebClient.getUrlParameter("project");
+  let currentObject = WebClient.getUrlParameter("object");
 
   // Initalize api wrapper
-  var api = new WebSdk.Api(WebSdk.createDefaultConfig(environment));
-
-  // Set some control variables
-  var token = WebClient.getUrlParameter('token');
-  var currentTeam = WebClient.getUrlParameter('team');
-  var currentProject = WebClient.getUrlParameter('project');
-  var currentObject = WebClient.getUrlParameter('object');
-
-  var objectProperties;
-
-  // Create the external client for communication with the bimplus controls
-  var externalClient = new WebClient.ExternalClient("MyClient");
-
+  let api = new WebSdk.Api(WebSdk.createDefaultConfig(environment));
   api.setAccessToken(token);
 
+  // Create the external client for communication with the bimplus controls
+  let externalClient = new WebClient.ExternalClient("MyClient");
+
   // Create the proxy classes for explorer and portal, binding it to an exisiting iframe id
-  objectProperties = new WebClient.BimObjectProperties('bimplusObjectProperties', api.getAccessToken(), externalClient, environment);
+  let objectProperties = new WebClient.BimObjectProperties(
+    "bimplusObjectProperties",
+    api.getAccessToken(),
+    externalClient,
+    environment
+  );
 
   // Initialize the client to listen for messages
   externalClient.initialize();
@@ -51,24 +50,23 @@ define(function (require) {
 
   $("#checkAlive").click(function () {
     // Send CheckElive message to object properties iframe
-    objectProperties.sendMessage('CheckAlive');
+    objectProperties.sendMessage("CheckAlive");
   });
 
   $("#objectStructureSelected").click(function () {
     // Send ObjectStructureSelected message to object properties iframe
-    objectProperties.sendMessage('ObjectStructureSelected', {
-      id: $("#objectStructureSelectedId").val()
+    objectProperties.sendMessage("ObjectStructureSelected", {
+      id: $("#objectStructureSelectedId").val(),
     });
   });
 
   $("#objectSelected").click(function () {
-    // Send ObjectSelected message to object properties iframe 
+    // Send ObjectSelected message to object properties iframe
     let objects = [];
-    let _objects = $("#objectSelectedIds").val().split(';');
-    for (let i = 0; i < _objects.length; i++) {
-      item = _objects[i].trim();
-      if (item !== "") {
-        objects.push(_objects[i].trim());
+    let _objects = $("#objectSelectedIds").val().split(";");
+    for (let obj of _objects) {
+      if (obj.trim() !== "") {
+        objects.push(obj.trim());
       }
     }
     if (objects.length === 0) {
@@ -76,24 +74,24 @@ define(function (require) {
     }
     if (objects.length === 1) {
       let isMultiselect = $("#multiselect").is(":checked");
-      objectProperties.sendMessage('ObjectSelected', {
+      objectProperties.sendMessage("ObjectSelected", {
         id: objects[0],
-        multiSelect: isMultiselect
+        multiSelect: isMultiselect,
       });
     }
     if (objects.length > 1) {
       let isMultiselect = $("#multiselect").is(":checked");
-      objectProperties.sendMessage('ObjectsSelected', {
+      objectProperties.sendMessage("ObjectsSelected", {
         ids: objects,
-        multiSelect: isMultiselect
+        multiSelect: isMultiselect,
       });
     }
   });
 
-  $('#currentObjectSelected').click(function () {
+  $("#currentObjectSelected").click(function () {
     // Send CurrentObjectSelected message to object properties iframe
-    objectProperties.sendMessage('CurrentObjectSelected', {
-      id: $("#currentObjectSelectedId").val().trim()
+    objectProperties.sendMessage("CurrentObjectSelected", {
+      id: $("#currentObjectSelectedId").val().trim(),
     });
   });
-})
+});
